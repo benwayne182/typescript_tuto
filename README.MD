@@ -1,4 +1,4 @@
-# ts_tuto
+# typescript_tuto
 
 #### Execute the TypeScript compiler
 

@@ -1,7 +1,7 @@
 class Shape {
 
     area: number;
-    private color: string;
+    color: string;
     //private access modifier, the accessibility of color if only the class body
 
     constructor(public name: string, public width: number, public height: number) {
@@ -23,3 +23,26 @@ console.log('Name of Shape: ' + square.name);
 console.log('Color of Shape: ' + square.color);
 console.log('Width of Shape: ' + square.width);
 console.log('Height of Shape: ' + square.height);
+
+
+class Shape3D extends Shape {
+
+    volume: number;
+
+    constructor ( public name: string, width: number, height: number, length: number ) {
+        super( name, width, height );
+        this.volume = length * this.area;
+    };
+
+    shoutout() {
+        return "I'm " + this.name +  " with a volume of " + this.volume + " cm cube.";
+    }
+
+    superShout() {
+        return super.shoutout();
+    }
+}
+
+var cube = new Shape3D("cube", 30, 30, 30);
+console.log( cube.shoutout() );
+console.log( cube.superShout() );
